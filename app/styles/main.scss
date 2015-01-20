@@ -1,26 +1,494 @@
- // Bourbon & Neat
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
+@import '../../bower_components/foundation/scss/foundation.scss';
 
 // Custom Styles
-body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+body {
+  height: 100%;
+  background: url(../images/cloth_alike.png);
+  font-family: "Audiowide", Helvetica, Arial, sans-serif;
+  h1, h2, h3, h4, h5, h6, p, a {
+    font-family: "Audiowide", Helvetica, Arial, sans-serif;
+  }
+}
+
+@mixin font-color {
+  color: HSLA(0, 0%, 24%, 1);
+}
+
+/*==================================
+            TOP NAV BAR
+==================================*/
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+
+.top-bar, .top-bar-section ul {
+  font-family: "Audiowide", Helvetica, Arial, sans-serif;
+  background: url(../images/dark_nav.png);
+  height: 50px;
+  .title-area {
+    padding-left: 3%;
+    padding-top: 3px;
+  }
+  .top-list {
+    width: 48.2%;
+    margin-left: 20%;
+    margin-top: 12.5px;
+    display: inline-block;
+    li {
+      display: inline-block;
+      padding: 0 4%;
+    }
+    a {
+      color: white;
+      &:hover {
+        color: HSLA(168, 77%, 42%, 1);
+      }
+    }
+  }
+  .top-links {
+    display: inline-block;
+    width: 9.75%;
+    margin-left: 0;
+    a {
+      padding: 0 4%;
+      img {
+        width: 20%;
+        transform: rotate(-360deg);
+        transition: all 0.5s;
+      }
+      img:hover {
+        transform: rotate(360deg);
+        transition: all 0.5s;
+      }
+    }
+  }
+}
+
+/*==================================
+          TITLE ANIMATION
+==================================*/
+
+span {
+    font-family: "Audiowide", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    overflow: hidden;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    -webkit-transition: all 1s;
+    transition-delay: 0.2s;
+}
+
+.branding:hover, .branding_port:hover, .branding_about:hover {
+  color: HSLA(168, 77%, 42%, 1);
+}
+
+.branding:hover .first{
+    width: 45px;
+    opacity: 1;
+}
+
+.branding_port:hover .first {
+    width: 125px;
+    opacity: 1;
+}
+
+.branding_about:hover .first {
+    width: 85px;
+    opacity: 1;
+}
+
+.branding:hover .last{
+    width: 65px;
+    opacity: 1;
+}
+
+span.hidden {
+    width: 0px;
+    opacity: 0;
+}
+
+.stash-left, .stash-right {
+  font-size: 1.0625rem;
+}
+
+.stash-left-about, .stash-right-about {
+  font-size: 1em;
+}
+
+/*==================================
+          FLIP ANIMATION
+==================================*/
+
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+	transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+	width: 100%;
+	height: 279px;
+  box-shadow: 0 0 0 5px lightgray;
+  &:hover {
+    box-shadow: 0 0 0 5px HSLA(168, 78%, 42%, 1);
+    transition: 0.6s;
+  }
+}
+
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* back, initially hidden pane */
+.back {
+  font-family: "Audiowide", Helvetica, Arial, sans-serif;
+	transform: rotateY(180deg);
+  background: url(../images/dark_nav.png);
+  padding: 5px;
+  text-align: center;
+  box-shadow: 0 0 0 5px HSLA(168, 78%, 42%, 1);
+  h3 {
+    text-align: center;
+    margin: 3% 0 3% 0;
+    color: white;
+    font-size: 1.75em;
+  }
+  p {
+    color: white;
+    font-size: .9em;
+  }
+}
+
+/*==================================
+            INTRO SECTION
+==================================*/
+
+#intro-area {
+  font-family: "Audiowide", Helvetica, Arial, sans-serif;
+  min-height: 100%;
+  background: url(../images/olivia2.png) no-repeat center center;
+  background-size: cover;
+  padding: 235px 0 100px 3%;
+  position: relative;
+  box-shadow: 0 8px 6px -6px HSLA(0, 0%, 15%, 1);
+  h4 {
+    @include font-color;
+    font-size: 2.5em;
+    margin: 0;
+    padding-bottom: 20px;
+    color: white;
+  }
+  h3 {
+    font-size: 2em;
+    color: HSLA(168, 77%, 42%, 1);
+    margin: 0;
+  }
+}
+
+/*==================================
+            PORTFOLIO SECTION
+==================================*/
+
+#projBox {
+  padding-bottom: 5%;
+}
+
+#TIYlogo {
+  display: inline-block;
+  margin: 6% 20% 8% 20%;
+  img {
+    width: 10%;
+    float: left;
+    margin-right: 3%;
+    margin-top: 2.25%;
+  }
+  p {
+
+  }
+}
+
+/*==================================
+            ABOUT SECTION
+==================================*/
+
+#aboutMe {
+  background-color: HSLA(0, 0%, 45%, .5);
+  font-family: "Audiowide", Helvetica, Arial, sans-serif;
+  padding-top: 6%;
+  margin-top: -3%;
+  box-shadow: 0 8px 6px -6px black;
+  #aboutMe-margin {
+    margin: 0 4%;
+  }
+  h5 {
+    @include font-color;
+    margin-bottom: 3%;
+    font-size: 2em;
+  }
+}
+
+#about-area {
+  @include outer-container;
+  font-family: "Audiowide", Helvetica, Arial, sans-serif;
+  @include font-color;
+  padding-top: 3%;
+  margin: 0;
+  max-width: 100%;
+  width: 100%;
+  background-color: HSLA(215, 56%, 39%, .5);
+  box-shadow: 0 8px 6px -6px black;
+  .about-left, .about-right {
+    @include span-columns(6);
+    margin-right: 0;
+    width: 50%;
+  }
+  h5 {
+    @include font-color;
+    margin-left: 4%;
+    font-size: 2em;
+    margin-bottom: 3%;
+  }
+  h4 {
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+  }
+  p {
+    @include font-color;
+    text-align: left;
+    padding: 0 10%;
+  }
+  .contactMe {
+    margin-bottom: -1.65%;
+    @include span-columns(12);
+    ul {
+      text-align: center;
+      margin: 2rem 0 1.25rem 0;
+      li {
+        padding: 0 5%;
+        list-style: none;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.me-left {
+  width: 15%;
+  float: left;
+}
+
+.me-right {
+  width: 15%;
+  float: right;
+}
+
+.me-middle {
+  margin-left: 28%;
+  width: 14.675%;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.knowMore {
+  margin: 5% 0 0 0;
+}
+
+/*==================================
+               FOOTER
+==================================*/
+
+#footer {
+  background-color: HSLA(0, 0%, 45%, .5);
+  p, ul {
+    display: inline-block;
+    margin:  3% 3% 3% 23%;
+  }
+}
+
+.GHcat {
+  width: 30px;
+  height: 30px;
+  padding: 2px 1px 1px 3px;
+}
+
+/*==================================
+            MEDIA QUERIES
+==================================*/
+@media (max-width: 640px) {
+  .top-bar {
+    .title-area {
+      height: 50px;
+    }
+    .name h1 {
+      width: 100%;
+    }
+    .top-list {
+      width: 100%;
+      margin-top: 0;
+      margin-left: 0;
+      li {
+        width: 100%;
+        height: 35px;
+        padding: 0;
+        text-align: center;
+        background-color: HSLA(0, 0%, 20%, 1);
+        border-top: 1px solid gray;
+        padding: 5px 0;
+      }
+      a {
+        color: white;
+        &:hover {
+          color: HSLA(168, 77%, 42%, 1);
+        }
+      }
+    }
+  }
+  #TIYlogo {
+    margin: 8% 8% 8% 10%;
+    img {
+      width: 15%;
+      margin-top: 3%;
+    }
+  }
+  #aboutMe {
+    height: 1540px;
+  }
+  #about-area .about-left, #about-area .about-right {
+    width: 100%;
+  }
+  #footer {
+    p {
+      display: none;
+    }
+    ul {
+      display: block;
+      margin: 0;
+      text-align: center;
+      padding: 3% 0;
+    }
+  }
+}
+
+@media (min-width: 641px) and (max-width: 660px) {
+  .top-bar .top-list {
+    margin-left: 17%;
+    width: 49%;
+  }
+  #footer p {
+    display: none;
+  }
+  #footer ul {
+    margin: 0;
+    text-align: center;
+    padding-left: 23%;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 800px) {
+  #footer p {
+    margin: 3% 3% 3% 17%;
+  }
+  #footer ul {
+    margin: 3% 3% 3% 17%;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .flip-container .back {
+    h3 {
+      font-size: 1.5em;
+    }
+    p {
+      font-size: .85em;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .top-bar {
+    .top-links {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 1224px) {
+  #TIYlogo {
+    margin: 6% 20% 6% 20%;
+  }
+}
+
+// Media updates for Project Boxes
+
+@media (min-width: 1025px) and (max-width: 1100px) {
+  .flip-container, .front, .back {
+    height: 227px;
+  }
+  .back h3 {
+    font-size: 1em;
+  }
+  .back p {
+    font-size: .75em;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 1101px) and (max-width: 1150px) {
+  .flip-container, .front, .back {
+    height: 238px;
+  }
+  .back h3 {
+    font-size: 1.3em;
+  }
+  .back p {
+    font-size: .75em;
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 1151px) and (max-width: 1200px) {
+  .flip-container, .front, .back {
+    height: 255px;
+  }
+  .back h3 {
+    font-size: 1.5em;
+  }
+  .back p {
+    font-size: .8em;
+    margin-bottom: 15px;
   }
 }
