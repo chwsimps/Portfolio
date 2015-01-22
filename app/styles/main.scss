@@ -129,9 +129,8 @@ span.hidden {
 }
 
 /*==================================
-           FLIP ANIMATION
+          FLIP ANIMATION
 ==================================*/
-
 .flip-container {
   perspective: 1000;
   transform-style: preserve-3d;
@@ -333,7 +332,7 @@ span.hidden {
 ==================================*/
 
 #aboutMe {
-  background-color: HSLA(0, 0%, 45%, .5);
+  background: HSLA(0, 0%, 45%, .5);
   font-family: "Audiowide", Helvetica, Arial, sans-serif;
   padding-top: 6%;
   margin-top: -3%;
@@ -356,7 +355,7 @@ span.hidden {
   margin: 0;
   max-width: 100%;
   width: 100%;
-  background-color: HSLA(215, 56%, 39%, .5);
+  background: HSLA(215, 56%, 39%, .5);
   box-shadow: 0 8px 6px -6px black;
   .about-left, .about-right {
     @include span-columns(6);
@@ -390,6 +389,16 @@ span.hidden {
         list-style: none;
         display: inline-block;
       }
+    }
+  }
+}
+
+.reveal-modal {
+  text-align: center;
+  button {
+    background-color: #88A0C0;
+    &:hover {
+      background-color: #2C5A98;
     }
   }
 }
@@ -474,6 +483,9 @@ span.hidden {
   }
   #about-area .about-left, #about-area .about-right {
     width: 100%;
+  }
+  .reveal-modal {
+    min-height: initial;
   }
   #footer {
     p {
