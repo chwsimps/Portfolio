@@ -1,5 +1,14 @@
 (function () {
 
+$(document).ready(function() {
+  $("h1.black").animate({
+    'height': 0
+  }, 3000,
+  function() {
+    $(".loader").fadeOut('slow');
+  });
+});
+
 $(document).foundation();
 
 $("#js-rotating").Morphext({
