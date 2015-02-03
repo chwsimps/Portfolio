@@ -1,7 +1,7 @@
 (function () {
 
 $(document).ready(function() {
-  $("h1.black").animate({
+  $("h1.white").animate({
     'height': 0
   }, 3000,
   function() {
