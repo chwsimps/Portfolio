@@ -204,7 +204,7 @@ span.hidden {
   transform: rotateY(-180deg);
   font-family: "Audiowide", Helvetica, Arial, sans-serif;
   // background: url(../images/dark_nav.png);
-  background-color: HSLA(168, 78%, 42%, 1);
+  background-color: HSLA(168, 37%, 55%, .5);
   padding: 5px;
   text-align: center;
   h3 {
@@ -212,6 +212,7 @@ span.hidden {
     margin: 3% 0 3% 0;
     color: white;
     font-size: 1.75em;
+    text-shadow: 1px 1px 1px gray;
   }
   p {
     color: white;
