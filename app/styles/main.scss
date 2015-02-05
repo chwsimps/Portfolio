@@ -392,6 +392,12 @@ span.hidden {
 /*==================================
             MEDIA QUERIES
 ==================================*/
+@media (max-width: 450px) {
+  #intro-area h3 {
+    font-size: 1.6em;
+  }
+}
+
 @media (max-width: 640px) {
   .top-bar {
     .title-area {
