@@ -13,7 +13,7 @@ html {
 
 body {
   height: 100%;
-  background: url(../images/cloth_alike.png);
+  // background: url(../images/cloth_alike.png);
   font-family: "Audiowide", Helvetica, Arial, sans-serif;
   h1, h2, h3, h4, h5, h6, p, a {
     font-family: "Audiowide", Helvetica, Arial, sans-serif;
@@ -42,7 +42,7 @@ body {
     overflow: hidden;
     color: white;
   }
-  h1.green {
+  h1.red {
     color: #1DBE9D;
   }
 }
@@ -52,21 +52,21 @@ body {
 ==================================*/
 
 header {
-  position: fixed;
+  position: absolute;
   width: 100%;
   z-index: 5;
 }
 
 .top-bar, .top-bar-section ul {
   font-family: "Audiowide", Helvetica, Arial, sans-serif;
-  background: url(../images/dark_nav.png);
+  background: transparent;
   height: 50px;
   .title-area {
     padding-left: 3%;
     padding-top: 3px;
   }
   .top-list {
-    width: 48.2%;
+    width: 47.99%;
     margin-left: 20%;
     margin-top: 12.5px;
     display: inline-block;
@@ -171,6 +171,9 @@ span.hidden {
   height: 275px;
   margin: 0 auto;
   margin-bottom: 15px;
+  &:hover {
+    box-shadow: none;
+  }
 }
 
 /* flip speed goes here */
@@ -204,7 +207,7 @@ span.hidden {
   transform: rotateY(-180deg);
   font-family: "Audiowide", Helvetica, Arial, sans-serif;
   // background: url(../images/dark_nav.png);
-  background-color: HSLA(168, 37%, 55%, .5);
+  background-color: HSLA(168, 37%, 55%, .7);
   padding: 5px;
   text-align: center;
   h3 {
@@ -280,7 +283,7 @@ span.hidden {
     margin-top: 2.25%;
   }
   p {
-
+    color: HSLA(0, 0%, 24%, 1);
   }
 }
 
@@ -289,11 +292,10 @@ span.hidden {
 ==================================*/
 
 #aboutMe {
-  background: HSLA(0, 0%, 45%, .5);
+  background: HSLA(203, 9%, 83%, 1);
   font-family: "Audiowide", Helvetica, Arial, sans-serif;
-  padding-top: 6%;
-  margin-top: -3%;
-  box-shadow: 0 8px 6px -6px black;
+  padding-top: 3%;
+  box-shadow: 0 8px 6px -6px HSLA(180, 1%, 25%, 1);
   #aboutMe-margin {
     margin: 0 4%;
   }
@@ -336,7 +338,7 @@ span.hidden {
     padding: 0 10%;
   }
   .contactMe {
-    margin-bottom: -1.65%;
+    margin-bottom: -1.6%;
     @include span-columns(12);
     ul {
       text-align: center;
@@ -376,7 +378,7 @@ span.hidden {
 ==================================*/
 
 #footer {
-  background-color: HSLA(0, 0%, 45%, .5);
+  background-color: HSLA(203, 9%, 83%, .5);
   p, ul {
     display: inline-block;
     margin:  3% 3% 3% 23%;
@@ -401,6 +403,7 @@ span.hidden {
 @media (max-width: 640px) {
   .top-bar {
     .title-area {
+      background: HSLA(180, 1%, 25%, .5);
       height: 50px;
     }
     .name h1 {
@@ -415,8 +418,8 @@ span.hidden {
         height: 35px;
         padding: 0;
         text-align: center;
-        background-color: HSLA(0, 0%, 20%, 1);
-        border-top: 1px solid gray;
+        background: HSLA(180, 1%, 25%, .5);
+        border-top: 1px solid HSLA(0, 0%, 53%, 1);
         padding: 5px 0;
       }
       a {
@@ -426,12 +429,21 @@ span.hidden {
         }
       }
     }
+    .aboutHeader {
+      border-bottom: 1px solid HSLA(0, 0%, 53%, 1);
+    }
+  }
+  .top-bar.expanded .title-area {
+    background: HSLA(180, 1%, 25%, .5);
   }
   #TIYlogo {
     margin: 8% 8% 8% 10%;
     img {
       width: 15%;
       margin-top: 3%;
+    }
+    p {
+      color: HSLA(180, 1%, 25%, 1);
     }
   }
   #about-area .about-left, #about-area .about-right {
