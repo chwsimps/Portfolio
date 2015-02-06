@@ -1,13 +1,14 @@
 (function () {
 
 $(document).ready(function() {
-  $("h1.white").animate({
+  $("h1.black").animate({
     'height': 0
   }, 3000,
   function() {
     $(".loader").fadeOut('slow');
   });
 });
+
 
 $(document).foundation();
 
@@ -44,6 +45,11 @@ $('.resume img, .email img, .phone img').on('mouseover', function(){
 $('.resume img, .email img, .phone img').on('mouseout', function(){
   $('.me-middle').css({'opacity':'0','visibility':'hidden'});
 
+});
+
+
+$('.top-list li').on('click', function () {
+  $('.expanded').removeClass();
 });
 
 
