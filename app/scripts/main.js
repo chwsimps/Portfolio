@@ -47,9 +47,12 @@ $('.resume img, .email img, .phone img').on('mouseout', function(){
 
 });
 
-
-$('.top-list li').on('click', function () {
-  $('.expanded').removeClass();
+$('.changeItUp').on('click', function () {
+  $('#intro-area').toggleClass('change-img');
+  $('#about-area').toggleClass('change-aboutMe');
+  $('#intro-area span').toggleClass('change-color');
+  $('.branding, .top-list a, .branding_about').toggleClass('change-color2');
+  $('.switch').toggleClass('change-icon');
 });
 
 
