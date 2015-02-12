@@ -42,7 +42,7 @@ body {
     overflow: hidden;
     color: white;
   }
-  h1.red {
+  h1.white {
     color: #1DBE9D;
   }
 }
@@ -102,6 +102,35 @@ header {
     }
   }
 }
+
+/*==================================
+          SWITCH ANIMATION
+==================================*/
+
+.change-img {
+  background: url(../images/olivia3.png)  no-repeat center center !important;
+  background-size: cover !important;
+  min-height: 100% !important;
+}
+
+.change-color {
+  color: HSLA(215, 45%, 45%, 1) !important;
+}
+
+.change-color2 {
+  &:hover {
+    color: HSLA(215, 45%, 45%, 1) !important;
+  }
+}
+
+.change-aboutMe {
+  background: HSLA(168, 88%, 30%, .5) !important;
+}
+
+.change-backColor {
+  background-color: HSLA(215, 46%, 45%, .5) !important;
+}
+
 
 /*==================================
           TITLE ANIMATION
@@ -220,6 +249,9 @@ span.hidden {
     font-size: 1.75em;
     text-shadow: 1px 1px 1px gray;
   }
+  .projPar {
+    color: HSLA(195, 100%, 36%, 1);
+  }
   p {
     color: white;
     font-size: .9em;
@@ -245,25 +277,6 @@ span.hidden {
 /*==================================
             INTRO SECTION
 ==================================*/
-.change-img {
-  background: url(../images/olivia3.png)  no-repeat center center !important;
-  background-size: cover !important;
-  min-height: 100% !important;
-}
-
-.change-color {
-  color: HSLA(215, 45%, 45%, 1) !important;
-}
-
-.change-color2 {
-  &:hover {
-    color: HSLA(215, 45%, 45%, 1) !important;
-  }
-}
-
-.change-aboutMe {
-  background: HSLA(168, 88%, 30%, .5) !important;
-}
 
 #intro-area {
   font-family: "Audiowide", Helvetica, Arial, sans-serif;

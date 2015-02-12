@@ -1,14 +1,13 @@
 (function () {
 
 $(document).ready(function() {
-  $("h1.black").animate({
+  $("h1.green").animate({
     'height': 0
   }, 3000,
   function() {
     $(".loader").fadeOut('slow');
   });
 });
-
 
 $(document).foundation();
 
@@ -38,23 +37,24 @@ $(function() {
 });
 
 // Visibility for Middle img on Hover
-$('.resume img, .email img, .phone img').on('mouseover', function(){
-  $('.me-middle').css({'opacity':'1','visibility':'visible'});
+$(document).ready(function() {
+  $('.resume img, .email img, .phone img').on('mouseover', function(){
+    $('.me-middle').css({'opacity':'1','visibility':'visible'});
+  });
+
+  $('.resume img, .email img, .phone img').on('mouseout', function(){
+    $('.me-middle').css({'opacity':'0','visibility':'hidden'});
+  });
+
+  $('.changeItUp').on('click', function () {
+    $('#intro-area').toggleClass('change-img');
+    $('#about-area').toggleClass('change-aboutMe');
+    $('#intro-area span').toggleClass('change-color');
+    $('.branding, .top-list a, .branding_about, .branding_port').toggleClass('change-color2');
+    $('.back').toggleClass('change-backColor');
+    $('.resume img').toggleClass('change-resume');
+  });
 });
-
-$('.resume img, .email img, .phone img').on('mouseout', function(){
-  $('.me-middle').css({'opacity':'0','visibility':'hidden'});
-
-});
-
-$('.changeItUp').on('click', function () {
-  $('#intro-area').toggleClass('change-img');
-  $('#about-area').toggleClass('change-aboutMe');
-  $('#intro-area span').toggleClass('change-color');
-  $('.branding, .top-list a, .branding_about').toggleClass('change-color2');
-  $('.switch').toggleClass('change-icon');
-});
-
 
 // Google Map
 
